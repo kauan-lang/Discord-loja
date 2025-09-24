@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja Oficial - Discord</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Navbar -->
+  <header class="bg-gray-800 shadow-lg fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-400">Loja Discord</h1>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="#planos" class="hover:text-indigo-400">Planos</a>
+        <a href="#sobre" class="hover:text-indigo-400">Sobre</a>
+        <a href="#contato" class="hover:text-indigo-400">Contato</a>
+      </nav>
+      <a href="https://discord.gg/seulink" target="_blank" class="bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded-lg font-semibold">Entrar no Discord</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="h-screen flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-700 text-center px-6">
+    <div>
+      <h2 class="text-5xl font-extrabold mb-6">Compre já seus produtos para Discord</h2>
+      <p class="text-lg md:text-xl mb-8 text-gray-200">Bots, servidores prontos, cargos e muito mais. Pagamento fácil via Pix.</p>
+      <a href="#planos" class="bg-white text-indigo-600 font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition">Ver Planos</a>
+    </div>
+  </section>
+
+  <!-- Planos -->
+  <section id="planos" class="py-20 max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-12">Nossos Planos</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Plano Básico -->
+      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center">
+        <h4 class="text-xl font-semibold mb-4">Plano Básico</h4>
+        <p class="mb-6">Ideal para iniciantes</p>
+        <p class="text-3xl font-bold text-indigo-400 mb-6">R$ 19,90</p>
+        <button class="bg-indigo-500 px-6 py-2 rounded-lg hover:bg-indigo-600 checkout-btn" data-title="Plano Básico" data-price="19,90">Comprar</button>
+      </div>
+
+      <!-- Plano Premium -->
+      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center border-2 border-indigo-500">
+        <h4 class="text-xl font-semibold mb-4">Plano Premium</h4>
+        <p class="mb-6">Mais benefícios e suporte</p>
+        <p class="text-3xl font-bold text-indigo-400 mb-6">R$ 49,90</p>
+        <button class="bg-indigo-500 px-6 py-2 rounded-lg hover:bg-indigo-600 checkout-btn" data-title="Plano Premium" data-price="49,90">Comprar</button>
+      </div>
+
+      <!-- Plano Ultimate -->
+      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center">
+        <h4 class="text-xl font-semibold mb-4">Plano Ultimate</h4>
+        <p class="mb-6">Tudo incluso + benefícios exclusivos</p>
+        <p class="text-3xl font-bold text-indigo-400 mb-6">R$ 99,90</p>
+        <button class="bg-indigo-500 px-6 py-2 rounded-lg hover:bg-indigo-600 checkout-btn" data-title="Plano Ultimate" data-price="99,90">Comprar</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="py-20 bg-gray-800 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Sobre Nós</h3>
+      <p class="text-gray-300 text-lg">Somos especialistas em criar soluções para servidores do Discord. 
+      Oferecemos bots personalizados, servidores configurados e cargos exclusivos para deixar sua comunidade única e profissional.</p>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-20 max-w-5xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-12">Entre em Contato</h3>
+    <form class="bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6">
+      <input type="text" placeholder="Seu nome" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-indigo-500">
+      <input type="email" placeholder="Seu e-mail" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-indigo-500">
+      <textarea placeholder="Sua mensagem" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-indigo-500" rows="5"></textarea>
+      <button type="submit" class="bg-indigo-500 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-600 w-full">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Modal Checkout Pix -->
+  <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center">
+    <div class="bg-gray-800 p-8 rounded-2xl w-96 text-center">
+      <h3 class="text-2xl font-bold mb-4" id="checkoutTitle">Finalizar Compra</h3>
+      <p class="mb-4">Faça o pagamento via Pix usando a chave abaixo:</p>
+
+      <div class="bg-gray-700 p-3 rounded-lg text-sm break-words mb-4">
+        <span id="pixKey">kauanfelipesantannasantanna@gmail.com</span>
+      </div>
+
+      <!-- QR Code Pix (gerado via API externa) -->
+      <img id="pixQr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=kauanfelipesantannasantanna@gmail.com" alt="QR Code Pix" class="mx-auto mb-4 rounded-lg shadow-lg">
+
+      <button onclick="copyPix()" class="bg-indigo-500 w-full px-6 py-3 rounded-lg hover:bg-indigo-600 font-semibold">📋 Copiar Chave Pix</button>
+
+      <button onclick="closeModal()" class="mt-4 text-gray-400 hover:text-white">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-400">
+    <p>© 2025 Loja Discord - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    const checkoutButtons = document.querySelectorAll(".checkout-btn");
+    const modal = document.getElementById("checkoutModal");
+    const checkoutTitle = document.getElementById("checkoutTitle");
+    const pixQr = document.getElementById("pixQr");
+
+    checkoutButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        checkoutTitle.innerText = btn.dataset.title + " - R$ " + btn.dataset.price;
+        modal.classList.remove("hidden");
+      });
+    });
+
+    function closeModal() {
+      modal.classList.add("hidden");
+    }
+
+    function copyPix() {
+      const pixKey = document.getElementById("pixKey").innerText;
+      navigator.clipboard.writeText(pixKey);
+      alert("✅ Chave Pix copiada: " + pixKey);
+    }
+  </script>
+</body>
+</html>
